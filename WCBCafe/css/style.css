@@ -1,0 +1,274 @@
+@charset "UTF-8";
+
+html {
+    font-size: 100%;
+
+}
+
+body {
+    font-family: "나눔고딕", NanumGothic, "맑은고딕", MalgunGothic, "Apple SD Gothic Neo", sans-serif;
+    line-height: 1.7;
+    color: #432;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none; /* a 태그의 밑줄 제거 */
+    display: inline-block; /* 마우스 올렸을 때 이동용 */
+}
+
+img {
+    max-width: 100%;
+}
+
+.logo {
+    width: 210px;
+    margin-top: 14px;
+}
+
+.main-nav {
+    display: flex;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    margin-top: 34px;
+    list-style: none;
+}
+
+.main-nav li {
+    margin-left: 36px;
+}
+
+.main-nav a {
+    color: #432;
+}
+
+.main-nav a:hover { /* 마우스를 올렸을 때 해당 색상으로 바꾸기 */
+    color: #0bd;
+    transform: translateY(-5px);
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper {
+    max-width: 1100px;
+    margin: 0 auto; /* 값을 2개 쓰는 경우 : [위아래] : 0 [좌우] : auto ▷ 좌우만 여백 주고 싶은 경우나 가로 가운데 정렬할 때 사용 */
+    padding: 0 4%;
+}
+
+/* home */
+.home-content {
+    text-align: center;
+    margin-top: 10%;
+}
+
+.home-content p {
+    font-size: 1.125rem;
+    margin: 10px 0 42px;
+}
+
+/* 제목 */
+.page-title {
+    font-size: 5rem;
+    font-family: 'Philosopher', serif;
+    /* text-transform : uppercase; */
+    /* font-weight: normal; */
+}
+
+/* 버튼 */
+.button {
+    font-size: 1.375rem;
+    background: #0bd;
+    color: #fff;
+    border-radius: 5px;
+    padding: 18px 32px;
+}
+
+.button:hover {
+    background-color: #0090aa;
+}
+
+/* 큰 배경 이미지 */
+.big-bg {
+    background-size: cover; /* 이미지의 가로 세로 비율 우지한채로 화면을 꽉 채울 때 이렇게 설정 */
+    background-position: center top; /* 가로 center 세로 top */
+    background-repeat: no-repeat;
+}
+
+#home {
+    background-image: url(../images/main-bg.jpg);
+    /* background-image: linear-gradient(skyblue, white); 그라데이션으로 배경 표현 직선 그레디언트가 아닌 원형 그레디언트는 radial-gradient 사용 */
+    /* background-image: url(../images/main-bg.jpg), linear-gradient(skyblue, white); 배경 사진과 그레디언트를 동사에 사용 */
+    min-height: 100vh; /* vh : 화면 기준 단위 1vh : 화면 높이의 1% 100 vh : 화면 높이의 100% (화면 꽉 채움)*/
+    background-color: black;
+    background-blend-mode: hard-light; /* 대비가 강해짐 */
+    /* background-blend-mode: luminosity; 차분함, 톤 통일 */
+}
+
+/* -------------------- NEWS -------------------- */
+
+#news {
+    background-image: url(../images/news-bg.jpg);
+    height: 270px;
+    margin-bottom: 40px;
+}
+
+#news .page-title {
+    text-align: center;
+}
+
+/* -------------------- Footer -------------------- */
+footer {
+    background-color: #432;
+    text-align: center;
+    padding: 26px 0;
+    
+}
+
+footer p {
+    color: #fff;
+    font-size: 0.875rem;
+}
+
+
+/* -------------------- 기사 -------------------- */
+article {
+    width: 60%;
+    order: 2;
+}
+
+
+/* -------------------- 사이드바 -------------------- */
+aside {
+    width: 22%;
+    order: 3;
+}
+
+.ad {
+    order: 1;
+}
+
+.news-contents {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.post-info {
+    position: relative;
+    padding-top : 4px;
+    margin-bottom: 40px;
+}
+
+.post-date {
+    background-color: #0bd;
+    border-radius: 50%;
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    font-size: 1.625rem;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    padding-top: 10px;
+}
+
+.post-date span {
+    font-size: 1rem;
+    border-top: 1px rgba(255, 255, 255, .5) solid; /* .5로 불투명도 지정*/
+    padding-top: 6px;
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.post-title {
+    font-family: "나눔명조", nanummyeongjo, serif;
+    font-size: 1.3rem;
+    font-weight: normal;
+}
+
+.post-title, .post-cat {
+    margin-left: 120px;
+}
+
+article img {
+    margin-bottom: 20px;
+}
+
+article p {
+    margin-bottom: 1rem;
+}
+
+.sub-title {
+    font-size: 1.375rem;
+    padding: 0 8px 8px;
+    border-bottom: 2px #0bd solid; /* 아래에 선을 설정함*/
+    font-weight: normal;
+}
+
+aside p {
+    padding: 12px 10px; /* 문장에는 padding을 설정해 요소 안쪽의 여백을 주어 쉽게 볼 수 있게 한다 */
+}
+
+.sub-menu {
+    margin-bottom: 60px;
+    list-style: none;
+}
+
+.sub-menu li {
+    border-bottom: 1px #ddd solid;
+}
+
+.sub-menu a {
+    color: #432;
+    padding: 10px;
+    display: block; /* 선택할 수 있는 범위를 넓혀줌*/
+}
+
+.sub-menu a:hover {
+    color: #0bd;
+}
+
+/* -------------------- MENU -------------------- */
+
+#menu {
+    background-image: url(../images/menu-bg.jpg);
+    min-height: 100vh;
+}
+
+.menu-content {
+    max-width: 560px;
+    margin-top: 10%;
+}
+
+.menu-content .page-title {
+    text-align: center;
+}
+
+.menu-content p {
+    font-size: 1.125rem;
+    margin: 10px 0 0;
+}
+
+.grid {
+    display: grid; /* 타일 형태로 배치하고 싶을 경우 grid 사용*/
+    gap: 26px; /* 요소 사이의 여백 */
+    grid-template-columns: 1fr 1fr 1fr; /* fr을 사용하여 화면 너비에 따라 비율로 너비가 지정*/
+    margin-top: 6%;
+    margin-bottom: 50px;
+}
+
+.big-box {
+    grid-column: 1 / 3; /* 가로 방향의 범위 1에서 3까지 */
+    grid-row: 1 / 3; /* 세로 방향의 범위 1에서 3까지 */
+}
+
+.big-box img { /* 큰 이미지와 작은 이미지의 높이가 맞지 않아 따로 지정함 */
+    height: 94%;
+    width: 100%;
+    /* object-fit : cover ▷ 크기에 맞게 구겨지지 않고 그냥 잘리게 하고 싶으면 이거 사용 */
+}

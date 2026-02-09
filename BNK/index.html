@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+    <div id = "all-container">
+     <header>
+            <div class="header-con">
+                <div class="regis">
+                    <ul>
+                        <li>
+                            <button class = "button openbutton" onclick="document.getElementById('myDiv').classList.toggle('open')">검색</button>
+                        </li>
+                        <li class="stick"> | </li>
+                        <button class = "button">로그인</button>
+                        <li class="stick"> | </li>
+                        <button class = "button">인증센터</button>
+                        <li class="stick"> | </li>
+                        <button class = "button">은행소개</button>
+                        <li class="stick"> | </li>
+                        <button class = "button">Global</button>
+                    </ul>
+                    <div class = "search" id="myDiv">
+                        <div class = "headerflex">
+                            <img src="images/logo.png" id = "headerlogo">
+                            <button class = "button openbutton xxxx" onclick = "document.getElementById('myDiv').classList.toggle('open')">X</button>
+                        </div>
+
+                        <div id = "searchicon">
+                            <input type="search" id = "searchbox" alt = "검색어를 입력해주세요.">
+                            <input type="image" id = "searchsubmit" src="images/돋보기.png">
+                        </div>
+                        <br>
+                        <hr style="padding-left: 15%; padding-right: 15%;">
+                        <div class = "headerflex2">
+                            <div>추천 검색어</div>
+                            <div class = "color">이체</div>
+                            <div class = "color">조회</div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+        <nav>
+            <img src="images/logo.png" alt="BNK 부산은행 로고" class="logo-img">
+            <!-- 드롭다운 -->
+            <div class="top-bar con-min-width">
+                <div class="con">
+                    <div class="drop">
+                        <ul>
+                            <li>
+                                <a href="#" class="drop-a">개인뱅킹</a>
+                                <ul>
+                                    <li><a href="#">조회</a></li>
+                                    <li><a href="#">이체</a></li>
+                                    <li><a href="#">공과금</a></li>
+                                    <li><a href="#">금융상품</a></li>
+                                    <li><a href="#">외환</a></li>
+                                    <li><a href="#">뱅킹관리</a></li>                            
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="drop-a">기업뱅킹</a>
+                                <ul>
+                                    <li><a href="#">내정보</a></li>
+                                    <li><a href="#">조회</a></li>
+                                    <li><a href="#">이체</a></li>
+                                    <li><a href="#">star</a></li>
+                                    <li><a href="#">CMS</a></li>
+                                    <li><a href="#">외환</a></li>                            
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="drop-a">금융상품</a>
+                                <ul>
+                                    <li><a href="#">예금</a></li>
+                                    <li><a href="#">펀드</a></li>
+                                    <li><a href="#">대출</a></li>
+                                    <li><a href="#">외환</a></li>
+                                    <li><a href="#">퇴직연금</a></li>                            
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="drop-a">전체메뉴</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 드롭다운 end -->
+        </nav>
+     </header>
+
+     <div class="event-img">
+        <div class="slider">
+        <div class="box"><img src="images/banner1.png"></div>
+        <div class="box"><img src="images/banner2.png"></div>
+        <div class="box"><img src="images/banner3.png"></div>
+    </div>
+
+    
+        <main>
+            
+            <div class="main-first">
+                <ul class="main-first-left quick">
+                    <li><a href="#">전체계좌조회</a></li>
+                    <li>|</li>
+                    <li><a href="#">계좌이체</a></li>
+                    <li>|</li>
+                    <li><a href="#">빠른조회</a></li>
+                </ul>
+                <ul class="quick">
+                    <li><a href="#">보안센터</a></li>
+                    <li>|</li>
+                    <li><a href="#">사고분실신고</a></li>
+                    <li>|</li>
+                    <li><a href="#">금융소비자보호</a></li>
+                </ul>
+            </div>
+
+
+            <div class="main-middle">
+
+                <a href="#">
+                    <div class = "middle-best">
+                        <img src="images/icon1.png" class="middleicon">
+                        <div class="middletext">베스트 상품</div>
+                        <div class="middlegraytext">온라인판매 TOP5</div>
+                    </div>
+                </a>
+                
+                <a href="#">
+                    <div class = "middle-recommend">
+                        <img src="images/icon2.png" class="middleicon">
+                        <div class="middletext">상품 추천</div>
+                        <div class="middlegraytext">상황에 맞는 상품 추천</div>
+                    </div>
+                </a>
+                
+                <a href="#">
+                    <div class = "middle-new">
+                        <img src="images/icon5.png" class="middleicon middleiconpadding">
+                        <div class="middletext">신규 상품</div>
+                        <div class="middlegraytext">최근 6개월이내 출시</div>
+                    </div>
+                </a>
+                
+            </div>
+
+            <div class="main-last">
+                <div class = "last-notice">
+                    <a href="#"><h3>새소식 > </h3></a>
+                    <ul>
+                        <li><a href="#">네트워크 장비 교체에 따른 일부 뱅킹서비스</a></li>
+                        <li><a href="#">일부 금융 기관 디지털 금융망 업부 일시중단 안내</a></li>
+                        <li><a href="#">네트워크 장비 교체에 따른 일부 뱅킹서비스</a></li>
+                        <li><a href="#">일부 금융 기관 디지털 금융망 업부 일시중단 안내</a></li>
+                        <li><a href="#">네트워크 장비 교체에 따른 일부 뱅킹서비스</a></li>
+                        <li><a href="#">일부 금융 기관 디지털 금융망 업부 일시중단 안내</a></li>
+                    </ul>
+                </div>
+                <div class = "event">
+                    <a href="#"><h3>이벤트 > </h3></a>
+                    <ul>
+                        <li><a href="#">네트워크 장비 교체에 따른 일부 뱅킹서비스</a></li>
+                        <li><a href="#">일부 금융 기관 디지털 금융망 업부 일시중단 안내</a></li>
+                        <li><a href="#">네트워크 장비 교체에 따른 일부 뱅킹서비스</a></li>
+                        <li><a href="#">일부 금융 기관 디지털 금융망 업부 일시중단 안내</a></li>
+                        <li><a href="#">네트워크 장비 교체에 따른 일부 뱅킹서비스</a></li>
+                        <li><a href="#">일부 금융 기관 디지털 금융망 업부 일시중단 안내</a></li>
+                    </ul>
+                </div>
+                <div class = "etc">
+                    <div class="smalletc"><a href="#">상품공시실</a></div>
+                    <div class="smalletc"><a href="#">서식/약관/자료실</a></div>
+                    <div class="smalletc"><a href="#">금융소비자보호</a></div>
+                    <div class="smalletc"><a href="#">고객센터</a></div>
+                    <div class="smalletc"><a href="#">비교조회서비스</a></div>
+                    <div class="smalletc"><a href="#">서민금융</a></div>
+                </div>
+            </div>
+
+        </main>
+
+        <footer>
+            <div id = "footer1">
+                <div class = "footergray">
+                    개인정보처리방침·경영공시·고객정보취급방침·보호금융상품등록부·상품공시실·전자민원접수
+                </div>
+
+                <div class = "footergray">
+                    전자금융이용사보호수칙·전자금융사기피해금환급제도·위치기반서비스 이용약관
+                </div>
+            </div>
+
+            <div id = "footer2" style="font-weight: bolder;">
+                고객상담 1588-6200 | 해외 82-2-1588-6200
+            </div>
+
+            <div id = "footer3">
+                COPYRIGHT ⓒ 2014 BUSANBANK. ALL RIGHTS RESERVED
+            </div>
+
+            <div id = "footer4">
+                <div id = "footerimg">
+                    <img src = "images/icon6.png" class ="footerlogo">
+                    <img src = "images/icon7.png" class ="footerlogo">
+                    <img src = "images/icon10.png" class ="footerlogo">
+                </div>
+                <div id = "selects">
+                    <select class="select">
+                        <option value="1">BNK금융네트워크</option>
+                        <option value="2">경남은행</option>
+                        <option value="3">BNK캐피탈</option>
+                        <option value="4">BNK투자증권</option>
+                        <option value="5">BNK저축은행</option>
+                        <option value="6">BNK자산운용</option>
+                        <option value="7">BNK신용정보</option>
+                        <option value="8">BNK시스템</option>
+                        <option value="9">BNK금융지주</option>
+                    </select>
+
+                    <select class="select">
+                        <option value="1">FAMILY SITE</option>
+                        <option value="2">BNK부산은행 조은극장</option>
+                        <option value="3">BNK부산은행갤러리</option>
+                        <option value="4">부산은행금융역사관</option>
+                        <option value="5">행복한 BNK</option>
+                        <option value="6">부은동우회</option>
+                    </select>
+                </div>
+                
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

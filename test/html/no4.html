@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        * {
+            margin: 0;
+        }
+        header > div {
+            padding-top: 15px;
+            height: 20px;
+            color: gray;
+            text-align: right;
+            margin-right: 7%;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .navitem {
+            font-weight: bolder;
+            font-size: 20px;
+            margin: 30px;
+        }
+
+        .navv-container {
+            display: flex;
+            margin-right: 7%;
+        }
+
+        #loggo {
+            margin-top: 30px;
+            margin-left: 100px;
+        }
+
+        #ad {
+            position: absolute;
+            top: 36%;
+            left: 68%;
+        }
+
+        #go {
+            background-image: url(../images/main_bg.png);
+            height: 300px;
+            width: 100%;
+        }
+
+        footer {
+            background-color: rgb(15, 15, 80);
+            height: 200px;
+        }
+
+        .footer-container {
+            justify-content: left;
+            margin-left: 10.5%;
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .whitecolor {
+            color: white;
+        }
+
+        .bold {
+            font-weight: bolder;
+        }
+
+        .footeritem {
+            padding-left: 30px;
+            padding-top: 20px;
+            font-size: 15px;
+        }
+
+        .footer-bottom-container {
+            display: flex;
+            margin-left: 10%;
+            justify-content: space-between;
+        }
+
+        .green {
+            color: green;
+        }
+
+        #center {
+            width: 1500px;
+        }
+
+        #mint {
+            color: white;
+            background-color: mediumaquamarine;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .maincontainer {
+            display: flex;
+            justify-content:space-around;
+            margin-left: 15%;
+            margin-right: 15%;
+        }
+
+        #big1 {
+            margin-top: 50px;
+            width: 20%;
+        }
+
+        #big2 {
+            margin-top: 50px;
+            width: 30%;
+        }
+
+        #big3 {
+            margin-top: 50px;
+            width: 30%;
+        }
+
+        hr {
+            margin-top: 5px;
+            border-style:double;
+            border-color: black;
+        }
+
+        #notice {
+            font-weight: bold;
+        }
+
+        #board {
+            font-weight: bold;
+        }
+
+        #classs {
+            font-weight: bold;
+        }
+
+        .make {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-left: 3%;
+        }
+
+        #blockk {
+            border-color: aquamarine;
+            border-style: solid;
+            border-width: 2px;
+            display: flex;
+            flex-direction: column;
+            margin-top: 15px;
+        }
+
+        .newflex {
+            margin-top: 3%;
+            margin-bottom: 3%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #gridd {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 10px;
+            row-gap: 15px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .bigtext {
+            text-align: left;
+            margin-left: 10px;
+        }
+
+        .minitext {
+            font-size: 15px;
+            color: gray;
+            text-align: left;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>김지영(jykim)님 | 로그아웃 | 정보수정</div>
+
+        <nav class = "nav-container">
+            <div><img src = "../images/logo.png" alt = "logo" id = "loggo"></div>
+            <ul class = "navv-container">
+                <li class = "navitem">Home</li>
+                <li class = "navitem">출석부</li>
+                <li class = "navitem">작품갤러리</li>
+                <li class = "navitem">게시판</li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class = "main">
+        <div id = "ad"><img src = "../images/btn_class.png"></div>
+        <div id = "go"></div>
+    </div>
+
+    <main class = "maincontainer">
+        <div id = "big1">
+            <div id = "mint">The 베이킹</div>
+            <div id = "inside" style="margin: 5%;">안녕하세요. 쿠키와 빵 만들기 정보를 공유하고 소통하는 공간입니다.</div>
+            <div style="text-align: center;">
+                <input type="text" id = "textt" style="display: inline; width: 70%;">
+                <input type="submit" id = "submit" style="display: inline; width: 20%;">
+            </div>
+            
+            <hr style="margin-top: 15px;">
+            <div style="margin-top: 10px; font-weight: bold;">베이킹/요리</div>
+            <hr style="border-color: rgb(214, 214, 214); border-style:solid; margin-bottom: 15px; margin-top: 15px;">
+            <div style="font-size: 15px;" class="make">
+                <div>쿠키 만들기</div>
+                <div>빵 만들기</div>
+                <div>마카롱 만들기</div>
+            </div>
+            <div id = "blockk">
+                <div style="font-weight: bold; margin-top: 7px; margin-left: 7px; margin-bottom: 7px;">최근 댓글</div>
+                <div style="margin-left: 7px; font-size: 15px; margin-bottom: 7px">안녕하세요!</div>
+                <div style="margin-left: 7px; font-size: 15px; margin-bottom: 7px">안녕하세요!</div>
+                <div style="margin-left: 7px; font-size: 15px; margin-bottom: 7px">안녕하세요!</div>
+            </div>
+            
+            <br>
+        </div>
+
+        <div id = "big2">
+            <div id = "notice">알림</div>
+            <hr>
+            <div class="newflex">
+                <div>쿠킹 클래스 연기합니다.</div>
+                <div>09.30</div>
+            </div>
+            <div class="newflex">
+                <div>쿠킹 클래스 연기합니다.</div>
+                <div>09.30</div>
+            </div>
+            <div class="newflex">
+                <div>쿠킹 클래스 연기합니다.</div>
+                <div>09.30</div>
+            </div>
+            <div class="newflex">
+                <div>쿠킹 클래스 연기합니다.</div>
+                <div>09.30</div>
+            </div>               
+            <div class="newflex">
+                <div>쿠킹 클래스 연기합니다.</div>
+                <div>09.30</div>
+            </div>
+            
+
+            <div id = "board">게시판</div>
+            <hr>
+            
+            <div class="newflex">
+                <div>안녕하세요. 반갑습니다.</div>
+                <div>09.30</div>
+            </div>
+            <div class="newflex">
+                <div>안녕하세요. 반갑습니다.</div>
+                <div>09.30</div>
+            </div>
+            <div class="newflex">
+                <div>안녕하세요. 반갑습니다.</div>
+                <div>09.30</div>
+            </div>
+            <div class="newflex">
+                <div>안녕하세요. 반갑습니다.</div>
+                <div>09.30</div>
+            </div>               
+            <div class="newflex">
+                <div>안녕하세요. 반갑습니다.</div>
+                <div>09.30</div>
+            </div>
+        </div>
+
+        <div id = "big3">
+            <div id = "classs">제빵 클래스</div>
+            <hr>
+            <div id = "gridd">
+                <div>
+                    <img src = "../images/bread1.png">
+                    <p class = "bigtext">도너츠 만들기[3]</p>
+                    <p class="minitext">2021.09.03</p>
+                </div>
+                <div>
+                    <img src = "../images/bread2.png">
+                    <p class = "bigtext">도너츠 만들기[3]</p>
+                    <p class="minitext">2021.09.03</p>
+                </div>
+                
+                <div>
+                    <img src = "../images/bread3.png">
+                    <p class = "bigtext">도너츠 만들기[3]</p>
+                    <p class="minitext">2021.09.03</p>
+                </div>
+
+                <div>
+                    <img src = "../images/bread4.png">
+                    <p class = "bigtext">도너츠 만들기[3]</p>
+                    <p class="minitext">2021.09.03</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer>
+        <div id = "center">
+            <nav class = "footer-container">
+                    <div class = "whitecolor bold footeritem">The 베이킹 소개</div>
+                    <div class = "whitecolor bold footeritem">개인정보처리방침</div>
+                    <div class = "whitecolor bold footeritem">저작권 정보</div>
+                    <div class = "whitecolor bold footeritem">이용 안내</div>
+            </nav>
+                <div class = "footer-bottom-container">
+                    <nav>
+                        <ul>
+                            <li class="green">문의전화</li>
+                            <li style="color: white; font-weight: bolder; font-size: 20px;">123-1234</li>
+                            <li style="color: white; font-size: small;">10:00 - 18:00 (Lunch 12:00 - 13:00)</li>
+                        </ul>
+                    </nav>
+
+                    <nav>
+                        <ul>
+                            <li class="green">The 베이킹</li>
+                            <li style="color: white; font-size: small;">주소 : 경기도 용인시 기흥구 동백대로 123</li>
+                            <li style="color: white; font-size: small;">전화 : 031-123-1234</li>
+                            <li style="color: white; font-size: small;">팩스 : 031-123-1234</li>
+                            <li style="color: white; font-size: small;">이메일 : 123-12-13245</li>
+                        </ul>
+                    </nav>
+
+                    <nav>
+                        <ul>
+                            <li class="green">입금 정보</li>
+                            <li style="color: white; font-size: small;">농협 123-123-123456</li>
+                            <li style="color: white; font-size: small;">The 베이킹</li>
+                        </ul>
+                    </nav>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>

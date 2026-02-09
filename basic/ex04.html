@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex04</title>
+    <style>
+
+        
+        #id1{
+            color: red;
+        }
+        .id1{
+            color: blue;
+        }
+        h1{
+            color: olive;
+        }
+        .wrap{
+            color: green;
+        }
+        #id2{
+            color: blue;
+        }
+        .wrap > p{
+            color: orange;
+        }
+        /* #id3 > p {
+            color: purple;
+        } */
+        h3 ~ p {
+            color: aqua;
+        }
+        input[type = "text"] {
+            border: 3px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id = "id1" class = "id1" style = "color: yellow">id 선택자 div 요소</h1>
+    <div class = "wrap">
+        <p id = "id2">id 선택자 p 요소</p>
+        <p>p 요소 2</p>
+        <div id = "id3">
+            <h3>h3 요소</h3>
+            <p>p 요소 3</p>
+            <p>p 요소 4</p>
+            <div>
+                <p>p 요소 test</p>
+            </div>
+            <p>p 요소 5</p>
+        </div>
+        <input type = "text">
+        <input type = "button">
+    </div>
+</body>
+</html>

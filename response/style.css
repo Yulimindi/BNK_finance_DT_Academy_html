@@ -1,0 +1,180 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------- MAIN BLOCK ---------- */
+
+body {
+    background-color: rgb(211, 211, 211);
+}
+
+#bigmainblock {
+    
+    display: flex;
+    gap: 5%;
+    justify-content: center;
+}
+
+.mainblock {
+    margin-top: 3%;
+    background-color: white;
+    height: auto;
+    width: 70%;
+    
+}
+
+.ad {
+    height: 100px;
+}
+
+.addphoto {
+    top: 20%;
+    bottom: 20%;
+    position: fixed;
+}
+
+/* ---------- HEADER ---------- */
+
+#mainheader {
+    height: 200px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 15%;
+    margin-right: 5%;
+}
+
+.headeritem {
+    display: flex;
+}
+
+#logo {
+    height: 140px;
+}
+
+#textinput {
+    height: 20px;
+    width: 300px;
+}
+
+#submit {
+    height: 20px;
+    padding-left: 8%;
+}
+
+.headerright {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.headerrightmini {
+    display: flex;
+}
+
+.headeritem > p {
+    color: gray;
+    font-size: 11px;
+    text-align: right;
+    margin-right: 14%;
+}
+
+/* ---------- NAV ---------- */
+#mainnav {
+    height: 40px;
+    border-top: 1px dashed gray;
+    border-bottom: 1px dashed gray;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+.maincontainer {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    margin-left: 5%;
+    margin-right: 5%;
+    gap: 1%;
+}
+
+.block1 {
+    border: 5px solid rgb(255, 0, 0);
+}
+
+.block2 {
+    border: 5px solid rgb(255, 0, 0);
+}
+
+.bigbold {
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+#turtle {
+    width: 100%;
+}
+
+.artiflex {
+    display: flex;
+    gap: 5px;
+}
+
+.artiname {
+    color: red;
+    font-size: 15px;
+    
+}
+
+.artinameplus {
+    color: gray;
+    font-size: 15px;
+}
+
+.article {
+    width: 90%;
+}
+
+.arti {
+    width: 100%;
+}
+
+#artiblock1 {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- FOOTER ---------- */
+.footercontainer {
+    margin-top: 30px;
+    background-color: gray;
+    height: 150px;
+}
+
+.footernav {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.topfooternav {
+    padding-top: 1%;
+}
+
+#footerhr {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+p {
+    font-size: 15px;
+}

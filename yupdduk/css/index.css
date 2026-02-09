@@ -1,0 +1,122 @@
+.container-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+
+.item-top {
+    padding: 3%;
+    font-size: large;
+    font-weight: bold;
+}
+
+#head {
+    background-color: red;
+    height: 10px;
+}
+
+body {
+    margin: 0%;
+}
+
+.slider-container {
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    width: 300%;
+    animation: slide 5s infinite;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0%); }
+    30% { transform: translateX(0%); }
+    
+    35% { transform: translateX(-33.333%); }
+    65% { transform: translateX(-33.333%); }
+
+    70% { transform: translateX(-66.666%); }
+    100% { transform: translateX(-66.666%); }
+}
+
+.container-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-menu {
+    padding : 1%;
+}
+
+.container-menu > div {
+    align-items:end;
+}
+
+#null {
+    width: 400px;
+}
+
+.container-menu > h1 {
+    align-items:center;
+}
+
+#mainmenu {
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+#maindiv {
+    width: 1500px;
+    margin: auto;
+}
+
+table {
+    margin: auto;
+}
+
+.foodname {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+td{
+    padding: 20px;
+    padding-top: 10px;
+}
+
+a {
+    text-decoration: none;
+    color:rgb(31, 31, 31);
+}
+
+#yupdetailblock {
+    border: 1px;
+    border-radius: 10%;
+    background-color: white;
+    height: 700px;
+    width: 1000px;
+    margin: auto;
+}
+
+#detailyupdduk {
+    height: 300px;
+}
+
+.container-detail {
+    display: flex;
+}
+
+#detailmenu {
+    margin-left: 7%;
+    margin-top: 30%;
+    font-size: 40px;
+}
+
+#detailexplain {
+    margin-top: 5%;
+    font-size: 20px;
+}

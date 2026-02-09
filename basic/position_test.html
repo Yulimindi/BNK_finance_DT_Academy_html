@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+        }
+
+        #container {
+            background-color: rgb(0, 138, 34);
+            width: 400px;
+            height: 400px;
+        }
+
+        .item {
+            box-sizing: border-box; /* 테두리도 규격 안에서 처리하라! */
+            border: 1px solid white;
+            width: 100px;
+            height: 100px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .blue {
+            background-color: blue;
+            /* position: relative; 자신이 있던 위치에서 이동 */
+            /* top: 20px;
+            left: 20px; */
+        }
+
+        .green {
+            background-color: rgb(0, 65, 0);
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        #title {
+            height: 20px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div id = "title">title</div>
+    <div id = "container">
+        <div class = "item red">1</div>
+        <div class = "item blue">2</div>
+        <div class = "item green">3</div>
+        <div class = "item orange">4</div>
+    </div>
+</body>
+</html>
