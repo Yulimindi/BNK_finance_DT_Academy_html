@@ -1,0 +1,142 @@
+* {
+    padding: 0%;
+    margin: 0%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.header-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-img {
+    height: 50px;
+}
+
+.header-imgs {
+    height: 35px;
+}
+
+.header-item {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.header-items {
+    display : flex;
+    gap : 30px;
+}
+
+.main-container {
+    background-color: #083a69;
+    height: 500px;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+}
+
+#explain {
+    height: 230px;
+    align-self:center;
+    margin-bottom: 150px;
+}
+
+#arrow {
+    margin-top: 320px;
+    position: absolute;
+    height: 150px;
+}
+
+.main2-container {
+    margin-left: 15%;
+    margin-right: 15%;
+    height: auto;
+    background-color: #eaeaea;
+    text-align: left;
+}
+
+.main-imgs {
+    margin-left: 10%;
+    height: 50px;
+    margin-bottom: 30px;
+}
+
+.main2-in-container {
+    margin-left: 10%;
+    margin-right: 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 30px;
+}
+
+.maintext {
+    color: #083a69;
+    font-size: 35px;
+    font-weight: bolder;
+}
+
+.small {
+    color: #083a69;
+    font-size: 20px;
+}
+
+.education {
+    text-align: left;
+}
+
+.skills {
+    text-align: left;
+}
+
+.award {
+    text-align: left;
+}
+
+.activites {
+    text-align: left;
+}
+
+.qualifications {
+    text-align: left;
+}
+
+.goal-container {
+    display: flex;
+    height: 500px;
+    margin-left: 10%;
+    margin-right: 10%;
+    justify-content: space-between;
+}
+
+.goalitems {
+    height: 90%;
+    width: 30%;
+    background-color: white;
+    margin-bottom: 30px;
+}
+
+.mini-header {
+    height: 70px;
+    background-color: #083a69;
+}
+
+.fontwhite {
+    color: white;
+    font-weight: border;
+    font-size: 45px;
+    text-align: center;
+}
+
+footer {
+    display: flex;
+    background-color: #083a69;
+    color: white;
+    font-size: 100px;
+    font-weight: border;
+    justify-content: space-around;
+}

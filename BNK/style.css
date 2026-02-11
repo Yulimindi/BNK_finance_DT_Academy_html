@@ -1,8 +1,8 @@
 @charset "utf-8";
 
 #all-container {
-    margin-left: 15%;
-    margin-right: 15%;
+    width: 1000px;
+    justify-self: center;
 }
 
 ul {
@@ -35,7 +35,7 @@ ul {
 .header-con{
         display: flex;
         justify-content: flex-end;
-    }
+}
 
 .regis{
     width: 400px;
@@ -260,9 +260,10 @@ main > div{
 
 /* =========== MAIN-FIRST =========== */
 .main-first{
+    margin-top: 10px;
     display: flex;
     justify-content: center;
-    height:100px;
+    height:70px;
 }
 .main-first ul{
     display: flex;
@@ -303,14 +304,14 @@ a {
     height: auto;
     text-align: center;
     justify-content: space-around;
-    gap: 100px;
+    gap: 50px;
 }
 
 .middle-best {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     border: gray 1px solid;
     border-radius: 10%;
-    width: 300px;
+    width: 250px;
     transition: transform 0.3s ease;
     padding: 5%;
 }
@@ -319,7 +320,7 @@ a {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     border: gray 1px solid;
     border-radius: 10%;
-    width: 300px;
+    width: 250px;
     transition: transform 0.3s ease;
     padding: 5%;
 }
@@ -328,7 +329,7 @@ a {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     border: gray 1px solid;
     border-radius: 10%;
-    width: 300px;
+    width: 250px;
     transition: transform 0.3s ease;
     padding: 5%;
 }
@@ -337,7 +338,7 @@ a {
     box-shadow: 5px 5px 10px rgba(255, 0, 0, 0.5);
     border: gray 1px solid;
     border-radius: 10%;
-    width: 300px;
+    width: 250px;
     transform: translate(10px, -10px);
 }
 
@@ -345,7 +346,7 @@ a {
     box-shadow: 5px 5px 10px rgba(255, 0, 0, 0.5);
     border: gray 1px solid;
     border-radius: 10%;
-    width: 300px;
+    width: 250px;
     transform: translate(10px, -10px);
 }
 
@@ -353,17 +354,17 @@ a {
     box-shadow: 5px 5px 10px rgba(255, 0, 0, 0.5);
     border: gray 1px solid;
     border-radius: 10%;
-    width: 300px;
+    width: 250px;
     transform: translate(10px, -10px);
 }
 
 .middleicon {
-    height: 200px;
-    width: 200px;
+    height: 130px;
+    width: 130px;
 }
 
 .middleiconpadding {
-    padding-left: 30px;
+    padding-left: 20px;
 }
 
 .middletext {

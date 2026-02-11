@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        #id {
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        .images {
+            border: 1px solid black;
+            height: 100px;
+        }
+
+        #arrow {
+            height: 100px;
+        }
+
+        #maincontainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 900px;
+            gap: 3%;
+        }
+
+        #score {
+            padding-top: 10%;
+            text-align: center;
+            height: 50%;
+            border: 1px solid black;
+            width: 20%;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="maincontainer">
+        <main>
+            <h1>환영한다 애송이.</h1>
+            <h1>절대 이길 수 없는 가위바위보를 시작하지.</h1>
+            <h1>아래에 있는 버튼을 눌러 원하는 걸 내라.</h1>
+            <img src="images/화살표.png" id = "arrow">
+            <br><br>
+            <div>
+                
+                <input type="image" src="images/paper.png" class="images" id="paper" onclick="getPaper()"></input>
+                <input type="image" src="images/scissor.png" class="images" id="scissor" onclick="getScissor()"></input>
+                <input type="image" src="images/rock.png" class="images" id="rock" onclick="getRock()"></input>
+                
+                <br><br>
+                <div style="font-size: 40px;">너의 선택은</div>
+                <br>
+                <input type="image" src="images/question.jpg" class="images" id="you"></input>
+                <br>
+                <div style="font-size: 40px;">난 이걸 내겠다</div>
+                <br>
+                <input type="image" src="images/question.jpg" class="images" id="my" onclick="changeMyImage(), changeScore()"></input>
+                
+                <br>
+                <button onclick="retry()">다시 도전하기</button>
+            </div>
+            
+        </main>
+
+        <div id="score">
+            <h1>게임 결과</h1>
+            <h1>승리 : 0회</h1>
+            <h1 id="changetext">패배 : 0회</h1>
+        </div>
+    </div>
+    <script>
+        
+        const paper = document.getElementById("paper");
+        const scissor = document.getElementById("scissor");
+        const rock = document.getElementById("rock");
+        let my = document.getElementById("my");
+        let you = document.getElementById("you");
+        let score = 0;
+
+        function getPaper() {
+            you.src="images/paper.png";
+            you = "paper";
+        }
+
+        function getScissor() {
+            you.src="images/scissor.png";
+            you = "scissor";
+        }
+
+        function getRock() {
+            you.src="images/rock.png";
+            you = "rock";
+        }
+
+        function changeMyImage() {
+
+            if(you == "paper") {
+                my.src="images/scissor.png";
+            } else if (you == "scissor") {
+                my.src="images/rock.png";
+            } else if (you == "rock") {
+                my.src="images/paper.png";
+            }
+        }
+
+        function retry() {
+            you = document.getElementById("you");
+            you.src="images/question.jpg";
+            my.src="images/question.jpg";
+        }
+
+        function changeScore() {
+            score++;
+            changetext.textContent = '패배 : ' + score + '회';
+            
+        }
+
+    </script>
+</body>
+</html>

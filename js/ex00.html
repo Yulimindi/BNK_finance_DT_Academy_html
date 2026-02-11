@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        button {
+            height: 300px;
+            width: 500px;
+            font-size: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id = "change" style="font-size: 150px;">자 내가 사라져볼게</div>
+    <button id = "btn" onclick="changeText()">얍!</button>
+
+    <hr>
+
+    <div>
+    <img src="../image/1.png" alt="이미지" id="img">
+    <!-- <button onclick="changeImage()">짠!</button> -->
+    <button onclick="readBook()">다음!</button>
+    </div>
+
+    <hr>
+
+    <div>
+        <input type="text" id="txt">
+        <button onclick="getValue()">값 받기</button>
+        
+    </div>
+
+    <div>
+        <input type="text" id="copy">
+        <button onclick="copyValue()">값 복사하기</button>
+        <input type="text" id="copytxt">
+    </div>
+
+    <script>
+
+        // text 변경
+        const change = document.getElementById("change");
+        function changeText() {
+            change.textContent = '';
+        }
+
+        // 이미지 변경
+        function changeImage() {
+            document.getElementsByTagName("img")[0].src = "../image/2.png";
+        }
+
+        function readBook() {
+            
+            // let cnt = Math.floor(Math.random()*3) + 1; // 랜덤수 출력
+            let cnt = 1;
+            const bookimg = document.getElementsByTagName("img")[0];
+            
+            while(cnt < 8) {
+                if(cnt == 1) {
+                    bookimg.src = "../image/2.png";
+                    cnt++;
+                } else if(cnt == 2) {
+                    bookimg.src = "../image/3.png";
+                    cnt++;
+                } else if(cnt == 3) {
+                    bookimg.src = "../image/4.png";
+                    cnt++;
+                } else if(cnt == 4) {
+                    bookimg.src = "../image/5.png";
+                    cnt++;
+                } else if(cnt == 5) {
+                    bookimg.src = "../image/6.png";
+                    cnt++;
+                    break;
+                }
+            }
+        }
+
+        
+        function getValue() {
+            alert(txt.value);
+        }
+
+        function copyValue() {
+            const copy = document.getElementById("copy");
+            const copytxt = document.getElementById("copytxt");
+            copytxt.value = copy.value;
+        }
+        
+
+    </script>
+</body>
+</html>
