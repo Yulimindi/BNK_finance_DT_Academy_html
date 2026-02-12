@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        input {
+            font-size: 30px;
+        }
+
+        #container {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .item {
+            font-size: 80px;
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+        }
+
+    </style>
+
+</head>
+<body>
+    <form>
+        <input type="text" id="input">
+        <br>
+        <div id="container">
+            <div class="item a" id="A">
+                A
+            </div>
+
+            <div class="item b" id="B">
+                B
+            </div>
+
+            <div class="item c" id="C">
+                C
+            </div>
+        </div>
+    </form>
+
+    <script>
+        const input = document.querySelector('#input');
+        const id = document.querySelector('#container');
+        const a = document.querySelector('#A');
+        const b = document.querySelector('#B');
+        const c = document.querySelector('#C');
+        let result ="";
+        
+
+        id.addEventListener('click', (evt) => {
+            result += evt.target.id;
+            input.value = result;
+        })
+
+
+    </script>
+
+</body>
+</html>

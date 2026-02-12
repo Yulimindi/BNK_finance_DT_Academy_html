@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GAME</title>
     <style>
         main {
             text-align: center;
@@ -33,7 +33,7 @@
         }
 
         #score {
-            padding-top: 10%;
+            padding-top: 8%;
             text-align: center;
             height: 50%;
             border: 1px solid black;
@@ -47,8 +47,8 @@
     <div id="maincontainer">
         <main>
             <h1>환영한다 애송이.</h1>
-            <h1>절대 이길 수 없는 가위바위보를 시작하지.</h1>
-            <h1>아래에 있는 버튼을 눌러 원하는 걸 내라.</h1>
+            <h2>절대 이길 수 없는 가위바위보를 시작하지.</h2>
+            <h2>아래에 있는 버튼을 눌러 원하는 걸 내라.</h2>
             <img src="images/화살표.png" id = "arrow">
             <br><br>
             <div>
@@ -68,13 +68,15 @@
                 
                 <br>
                 <button onclick="retry()">다시 도전하기</button>
+                <br><br>
             </div>
             
         </main>
 
         <div id="score">
-            <h1>게임 결과</h1>
+            <h1>▷ 게임 결과 ◁</h1>
             <h1>승리 : 0회</h1>
+            <h1>무승부 : 0회</h1>
             <h1 id="changetext">패배 : 0회</h1>
         </div>
     </div>
@@ -122,7 +124,6 @@
         function changeScore() {
             score++;
             changetext.textContent = '패배 : ' + score + '회';
-            
         }
 
     </script>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: borderbox;
+        }
+        #box1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 5px solid black;
+            height: 500px;
+        }
+
+        #outer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            width: 500px;
+            height: 100%;
+            background-color: beige;
+
+        }
+
+        #middle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            width: 300px;
+            height: 300px;
+            background-color: tomato;
+
+        }
+
+        #inner {
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            background-color: darkolivegreen;
+        }
+
+        .text {
+            position: absolute;
+        }
+
+        .text1 {
+            top: 1%;
+            left: 25%;
+        }
+
+        .text2 {
+            top: 12%;
+            left: 36%;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box1">
+        <div id="outer">outer
+            
+            <div id="middle">middle
+                
+                <div id="inner">inner
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 스크립트 -->
+    <script>
+
+        const box = document.querySelector('#box1');
+        const outer = document.querySelector('#outer');
+        const middle = document.querySelector('#middle');
+        const inner = document.querySelector('#inner');
+
+        const text1 = document.querySelector('.text1');
+        const text2 = document.querySelector('.text2');
+        const text3 = document.querySelector('.text3');
+
+        outer.addEventListener('click', function(e) {
+            // console.log("currentTarget : " + e.currentTarget.id); // 리스너가 달려있는 지점 (바인딩 된 지점)
+            console.log("Target : " + e.target.id); // 이벤트가 발생한 지점
+            // console.log("outer...");
+        })
+
+        // outer.addEventListener('click', (evt) => {
+        //     console.log(evt.target.id);
+        // })
+
+        // outer.addEventListener('click', (evt) => {
+        //     console.log(evt.target.id);
+        // })
+
+        // middle.addEventListener('click', (evt) => {
+        //     // console.log(evt.target.textContent);
+        //     console.log("middle");
+        // })
+
+        // inner.addEventListener('click', (evt) => {
+        //     // console.log(evt.target.textContent);
+        //     console.log("inner");
+        // })
+
+
+    </script>
+</body>
+</html>

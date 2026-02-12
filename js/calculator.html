@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <style>
+
+        body {
+            background-color: rgb(117, 117, 117);
+        }
+        h1 {
+            width: 436px;
+            text-align: center;
+            background-color: antiquewhite;
+        }
+
+        input {
+            font-size: 30px;
+        }
+
+        #container {
+            width: 300px;
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 10px;
+        }
+
+        .item {
+            font-size: 80px;
+            height: 100px;
+            width: 100px;
+            background-color: antiquewhite;
+        }
+
+        .item:hover {
+            background-color: rgb(177, 177, 177);
+        }
+
+        input {
+            width: 430px;
+            background-color: antiquewhite;
+            border: none;
+        }
+
+        #bigcontainer {
+            display: flex;
+        }
+
+        #board {
+            margin-left: 50px;
+            height: 500px;
+            width: 300px;
+        }
+
+        #text {
+            overflow: hidden;
+            height: auto;
+            width: 300px;
+            background-color: antiquewhite;
+        }
+
+        h2 {
+            text-align: center;
+            background-color: antiquewhite;
+        }
+
+        .texts {
+            font-size: 20px;
+            display: flex;
+        }
+
+        button {
+            border: none;
+            background-color:antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <div id="bigcontainer">
+        <div>
+            <h1>➕애매한 계산기 ➗ </h1>
+            <div id="container">
+                <div class="item cal" id="7">
+                    7
+                </div>
+
+                <div class="item cal" id="8">
+                    8
+                </div>
+
+                <div class="item cal" id="9">
+                    9
+                </div>
+
+                <div class="item cal" id="/">
+                    ÷
+                </div>
+
+                <div class="item cal" id="4">
+                    4
+                </div>
+
+                <div class="item cal" id="5">
+                    5
+                </div>
+
+                <div class="item cal" id="6">
+                    6
+                </div>
+
+                <div class="item cal" id="*">
+                    × 
+                </div>
+
+                <div class="item cal" id="1">
+                    1
+                </div>
+
+                <div class="item cal" id="2">
+                    2
+                </div>
+
+                <div class="item cal" id="3">
+                    3
+                </div>
+
+                <div class="item cal" id="-">
+                    －
+                </div>
+            
+                <div class="item" id="clear">
+                    C
+                </div>
+
+                <div class="item cal" id="0">
+                    0
+                </div>
+
+                <div class="item cal" id="del">
+                    D
+                </div>
+
+                <div class="item cal" id="+">
+                    ＋
+                </div>
+
+                <div class="item equal" id="(">
+                    (
+                </div>
+
+                <div class="item equal" id=")">
+                    )
+                </div>
+
+                <div class="item equal" id="s">
+                    S
+                </div>
+
+                <div class="item equal" id="equals">
+                    ＝
+                </div>
+
+            </div>
+
+            <br>
+
+            <div>
+                <input type="text" id="equation"><br><br>
+                <input type="text" id="answer">
+            </div>
+
+        </div>
+        
+        <div id="board">
+            <h2>📃 기록 📃</h2>
+            <div id="text">
+                <div class="texts">
+                    <div id="recode1">
+                        <div class="cal">계산기록</div>
+                        <div class="ans">답</div>
+                    </div>
+                    <button>X</button>
+                </div>
+                <div class="texts">
+                    <div id="recode2">
+                        <div class="cal">계산기록</div>
+                        <div class="ans">답</div>
+                    </div>
+                    <button>X</button>
+                </div>
+                <div class="texts">
+                    <div id="recode3">
+                        <div class="cal">계산기록</div>
+                        <div class="ans">답</div>
+                    </div>
+                    <button>X</button>
+                </div>
+                <div class="texts">
+                    <div id="recode4">
+                        <div class="cal">계산기록</div>
+                        <div class="ans">답</div>
+                    </div>
+                    <button>X</button>
+                </div>
+                <div class="texts">
+                    <div id="recode5">
+                        <div class="cal">계산기록</div>
+                        <div class="ans">답</div>
+                    </div>
+                    <button>X</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+
+        const container = document.querySelector('#container');
+        const equation = document.querySelector('#equation');
+        const answer = document.querySelector('#answer');
+        const number = document.querySelectorAll('#cal');
+        const clear = document.querySelector('#clear');
+        const cal = document.querySelector('#equals');
+
+        let sick = "";
+        let count = 0;
+        
+        container.addEventListener('click', (event) => {
+            if(event.target.id == 'clear') {
+                equation.value = '';    
+                answer.value = '';
+            } else if(event.target.id == 'equals') {
+                calcul();
+            } else if(event.target.id == 'container') {
+
+            } else if(event.target.id == 'del') {
+                sicks = sick.slice(0, sick.length-1);
+                sick = sicks;
+                equation.value = sick;
+            } else if(event.target.id == 's') {
+                save();
+            } else {
+                sick += event.target.id;
+                equation.value = sick;
+            }
+            console.log(event.target.id);
+        })
+        
+        clear.addEventListener('click', () => {
+            equation.value = "";
+            sick = "";
+        })
+
+        function calcul() {
+            if(sick.at(-1) == '/' || sick.at(-1) == '*' || sick.at(-1) == '-' || sick.at(-1) == '+' || sick.at(-1) == '(') {
+                alert("식을 마치지 않았습니다.");
+            } else if (sick == '') {
+                answer.value = '';
+            } else {
+                answer.value = eval(sick);
+            }
+            
+        }
+
+    </script>
+</body>
+</html>

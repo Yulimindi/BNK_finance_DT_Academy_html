@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id = "wrap">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+    </div>
+
+    <hr>
+
+    <div>
+        <form>
+            <input type="text" name="nickname" value="">
+            <input type="submit" value="제출">           
+        </form>
+
+        
+    </div>
+
+    <hr>
+    <div>
+        <form>
+            <input type="checkbox" name="fruit" value="apple" onclick="check()">사과
+            <input type="checkbox" name="fruit" value="banana" onclick="check()">바나나
+            <input type="checkbox" name="fruit" value="peach" onclick="check()">복숭아
+            <input type="checkbox" name="fruit" value="grape" onclick="check()">포도    
+        </form>
+
+        <div id="demo1">0개 체크되었습니다.</div>
+    </div>
+
+    <hr>
+    
+    <div>
+        <form>
+            <input type="checkbox" name="fruits" value="apple">사과
+            <input type="checkbox" name="fruits" value="banana">바나나
+            <input type="checkbox" name="fruits" value="peach">복숭아
+            <input type="checkbox" name="fruits" value="grape">포도    
+        </form>
+        <button onClick="howManyChecked()">개수 확인</button>
+        <div id="demo2">0개 체크되었습니다.</div>
+    </div>
+
+    <script>
+        let demo1 = document.querySelector('#demo1');
+        let demo2 = document.querySelector('#demo2');
+        let tORf = document.querySelectorAll('input[name="fruit"]').length;
+        let tORf2 = document.querySelectorAll('input[name="fruits"]').length;
+        let keyword = document.querySelectorAll('input[name="fruit"]');
+        let keyword2 = document.querySelectorAll('input[name="fruits"]');
+        let count;
+
+        function check() {
+            count = 0;
+            for(i = 0; i < tORf; i++) {
+                if(keyword[i].checked) {
+                    count++;
+                }
+            }
+            demo1.textContent = count + "개 체크되었습니다.";
+        }
+
+        function howManyChecked() {
+            count = 0;
+            for(i = 0; i < tORf2; i++) {
+                if(keyword2[i].checked) {
+                    count++;
+                }
+            }
+            demo2.textContent = count + "개 체크되었습니다.";
+        }
+
+
+    </script>
+
+</body>
+</html>

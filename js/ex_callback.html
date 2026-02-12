@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #demo {
+            height: 100px;
+            width: 100px;
+            background-color: tomato;
+        }
+
+        #box {
+            height: 100px;
+            width: 100px;
+            background-color: dodgerblue;
+        }
+
+        #question {
+            height: 100px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <button id="btn">실행</button>
+    <div id="demo">안녕</div>
+    <hr>
+    <div id="box">박스에용</div>
+
+    <hr>
+    <img src="images/paper.png" id="paper">
+    <img src="images/scissor.png" id="scissor">
+    <img src="images/rock.png" id="rock">
+    <div id="text">결과</div>
+
+    <hr>
+    <img src="images/paper.png" id="paper2" class="images">
+    <img src="images/scissor.png" id="scissor2" class="images">
+    <img src="images/rock.png" id="rock2" class="images">
+    <div id="text2">결과</div>
+
+
+    <hr>
+    <img src="images/paper.png" id="paper3">
+    <img src="images/scissor.png" id="scissor3">
+    <img src="images/rock.png" id="rock3"><br>
+    <img src="images/question.jpg" id="question">
+
+    <script>
+        
+        const paper = document.querySelector('#paper');
+        const scissor = document.querySelector('#scissor');
+        const rock = document.querySelector('#rock');
+
+        const paper3 = document.querySelector('#paper3');
+        const scissor3 = document.querySelector('#scissor3');
+        const rock3 = document.querySelector('#rock3');
+        const question = document.querySelector('#question');
+
+        const text = document.querySelector("#text");
+        let images = document.querySelectorAll('.images');
+
+        const btn = document.querySelector("#btn");
+        const demo = document.querySelector("#demo");
+        const box = document.querySelector("#box");
+
+
+        paper.addEventListener('click', (evt) => {
+            text.textContent = evt.target.id +"를 내셨습니다.";
+        })
+
+        scissor.addEventListener('click', (evt) => {
+            text.textContent = evt.target.id +"를 내셨습니다.";
+        })
+
+        rock.addEventListener('click', (evt) => {
+            text.textContent = evt.target.id +"를 내셨습니다.";
+        })
+
+        for(i = 0; i < 3; i++) {
+            images[i].addEventListener('click', (evt) => {
+            if(evt.target.id == 'paper2') {
+                text2.textContent = "보를 내셨습니다.";
+            } else if(evt.target.id == "scissor2") {
+                text2.textContent = "가위를 내셨습니다.";
+            } else if(evt.target.id == "rock2") {
+                text2.textContent = "주먹을 내셨습니다.";
+            }
+        })
+        }
+        
+
+
+        paper3.addEventListener('click', () => {
+            question.src = "images/paper.png";
+        })
+
+        scissor3.addEventListener('click', () => {
+            question.src = "images/scissor.png";
+        })
+
+        rock3.addEventListener('click', () => {
+            question.src = "images/rock.png";
+        })
+
+
+
+        box.addEventListener('click', (evt) => {
+            console.log(evt.target.tagName);
+            console.log(evt.target.id);
+            console.log(evt.target.textContent);
+        })
+
+        const f = () => {
+            alert('f() 실행 햇스요');
+        }
+
+        btn.addEventListener('click', f); // 여기서 f를 콜백함수라고 하는거임
+        demo.addEventListener('mouseover', () => {
+            alert('mouseover');
+        })
+        
+        const add = (a, b) => {
+            let result = a + b;
+            console.log(result);
+        };
+
+        function printConsole(x) {
+            console.log(x);
+        }
+
+        function printDemo(x) {
+            document.querySelector('#demo').textContent = x;
+        }
+
+        function addWithCallback(n1, n2, callback) {
+            let result = n1 + n2;
+            callback(result);
+        }
+
+        function subWithCallback(n1, n2, callback) {
+            let result = n1 - n2;
+            callback(result);
+        }
+
+        addWithCallback(1, 3, printConsole);
+
+    </script>
+
+</body>
+</html>
