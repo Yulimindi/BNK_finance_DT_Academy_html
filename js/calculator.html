@@ -168,8 +168,8 @@
             <br>
 
             <div>
-                <input type="text" id="equation"><br><br>
-                <input type="text" id="answer">
+                <input type="text" id="equation" value="equation"><br><br>
+                <input type="text" id="answer" value="answer">
             </div>
 
         </div>
@@ -179,38 +179,38 @@
             <div id="text">
                 <div class="texts">
                     <div id="recode1">
-                        <div class="cal">계산기록</div>
-                        <div class="ans">답</div>
+                        <div class="cal"></div>
+                        <div class="ans"></div>
                     </div>
-                    <button>X</button>
+                    <button class="button">X</button>
                 </div>
                 <div class="texts">
                     <div id="recode2">
-                        <div class="cal">계산기록</div>
-                        <div class="ans">답</div>
+                        <div class="cal"></div>
+                        <div class="ans"></div>
                     </div>
-                    <button>X</button>
+                    <button class="button">X</button>
                 </div>
                 <div class="texts">
                     <div id="recode3">
-                        <div class="cal">계산기록</div>
-                        <div class="ans">답</div>
+                        <div class="cal"></div>
+                        <div class="ans"></div>
                     </div>
-                    <button>X</button>
+                    <button class="button">X</button>
                 </div>
                 <div class="texts">
                     <div id="recode4">
-                        <div class="cal">계산기록</div>
-                        <div class="ans">답</div>
+                        <div class="cal"></div>
+                        <div class="ans"></div>
                     </div>
-                    <button>X</button>
+                    <button class="button">X</button>
                 </div>
                 <div class="texts">
                     <div id="recode5">
-                        <div class="cal">계산기록</div>
-                        <div class="ans">답</div>
+                        <div class="cal"></div>
+                        <div class="ans"></div>
                     </div>
-                    <button>X</button>
+                    <button class="button">X</button>
                 </div>
             </div>
 
@@ -225,8 +225,12 @@
         const clear = document.querySelector('#clear');
         const cal = document.querySelector('#equals');
 
+        const button = document.querySelector('.button');
+        const texts = document.querySelectorAll('.texts');
+
         let sick = "";
         let count = 0;
+
         
         container.addEventListener('click', (event) => {
             if(event.target.id == 'clear') {
@@ -262,8 +266,24 @@
             } else {
                 answer.value = eval(sick);
             }
-            
         }
+
+        console.log(texts[0].id.textContent);
+        // function save() {
+        //     for(i = 0; i < 5; i++) {
+        //         if(texts[i].textContent == '') {
+
+        //         }
+
+        //         if(texts[i].textContent != '') {
+        //             alert('더이상 추가할 수 없습니다');
+        //         }
+        //     }
+        // }
+
+
+            
+
 
     </script>
 </body>

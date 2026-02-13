@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #hello {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <input type="text" name="txt">
+
+    <div id="hello">hello</div>
+
+    <script>
+        const input = document.querySelector("input[name='txt']");
+        const name = document.querySelector("#hello");
+        
+        input.addEventListener("click", () => {
+            
+        })
+
+        // input.addEventListener("keyup", (e) => {
+        //     console.log("눌렀다 뗀 키 : ", e.key); // 한글은 process라고 나오고 영어는 제대로 나옴 (그래서 알파벳 기준으로 확인 해야함)
+        //     console.log("현재 값 : ", e.target.value);
+        // });
+
+        input.addEventListener("input", (e) => {
+            console.log("현재 값 : ", e.target.value);
+        });
+
+    </script>
+    
+</body>
+</html>
