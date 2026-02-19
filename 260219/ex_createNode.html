@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .item {
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+        }
+
+        .red {
+            background-color: rgb(255, 109, 109);
+        }
+
+        .size {
+            height: 100px;
+            width: 100px;
+        }
+
+        .borderColor {
+            border: 1px solid black;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <input type="button" value="이미지 생성" id="button">
+    </div>
+
+    <script>
+        const wrap = document.querySelector('#wrap');
+        const div = document.createElement('div'); // 요소 만들기
+        const txt = document.createTextNode('item1'); // 요소 내부에 들어갈 txt 만들기
+        
+        
+        // 속성 추가하기 1번 방법
+        // const attr = document.createAttribute('class'); // 속성 만들기
+        // attr.value = 'item';
+        // div.setAttributeNode(attr); // 만든 속성을 div에 넣어줌
+
+        // 속성 추가하기 2번 방법
+        div.setAttribute('class', 'item');
+        // div.setAttribute('class', 'red'); 이렇게 중복으로 넣으면 기존 class가 지워짐
+        
+        // 속성 추가하기 3번 방법 (클래스일 경우)
+        div.classList.add('red'); 
+
+        div.appendChild(txt); // txt가 div의 자식으로 들어감
+        wrap.appendChild(div); // div가 wrap의 자식으로 들어감
+
+        const button = document.querySelector('#button');
+        button.addEventListener("click", () => {
+            // 이미지 추가하기
+            const image = document.createElement('img');
+            image.setAttribute('src', '../js/images/question.jpg');
+            wrap.appendChild(image);
+            image.classList.add('size');
+        })
+
+        // 테이블 만들기
+
+        const table = document.createElement('table');
+        const thead = document.createElement('thead');
+        const tbody = document.createElement('tbody');
+
+        const tr1 = document.createElement('tr');
+        const tr2 = document.createElement('tr');
+        const tr3 = document.createElement('tr');
+
+        const td1 = document.createElement('th');
+        const td2 = document.createElement('th');
+        const td3 = document.createElement('td');
+        const td4 = document.createElement('td');
+        const td5 = document.createElement('td');
+        const td6 = document.createElement('td');
+
+        const text1 = document.createTextNode('제목1');
+        const text2 = document.createTextNode('제목2');
+        const text3 = document.createTextNode('내용1');
+        const text4 = document.createTextNode('내용2');
+        const text5 = document.createTextNode('내용3');
+        const text6 = document.createTextNode('내용4');
+        
+        let createTxt = [text1, text2, text3, text4, text5, text6];
+        for(let i = 0; i < createTxt.length; i++) {
+            if(i < 2) {
+                createTxt[i] = document.createTextNode('제목');
+            } else {
+                createTxt[i] = document.createTextNode('내용');
+            }
+        }
+
+        // 자식 요소 추가
+        wrap.appendChild(table);
+        table.appendChild(thead);
+        table.appendChild(tbody);
+
+        thead.appendChild(tr1);
+        tbody.appendChild(tr2);
+        tbody.appendChild(tr3);
+
+        tr1.appendChild(td1);
+        tr1.appendChild(td2);
+        
+        // 배열 만들기
+        let createTd = [td3, td4, td5, td6];
+        let txtArr = [text3, text4, text5, text6];
+
+        for(let i = 0; i < createTd.length; i++) {
+            if(i < 2) {
+                console.log("i<2");
+                tr2.appendChild(createTd[i]);
+                createTd[i].appendChild(txtArr[i]);
+            } else {
+                console.log("i>2");
+                tr3.appendChild(createTd[i]);
+                createTd[i].appendChild(txtArr[i]);
+            }
+        }
+
+        td1.appendChild(text1); // 제목
+        td2.appendChild(text2); // 제목
+
+        // 클래스 추가
+        let all = [table, tr1, tr2, td1, td2, td3, td4, td5, td6];
+        for(let i = 0; i < all.length; i++) {
+            all[i].classList.add('borderColor');
+        }
+    
+
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .item {
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+        }
+
+        .red {
+            background-color: rgb(255, 109, 109);
+        }
+
+        .size {
+            height: 100px;
+            width: 100px;
+        }
+
+        .borderColor {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .red {
+            border: 1px solid black;
+            background-color: red;
+            height: 100px;
+            width: 100px;
+        }
+        
+        .green {
+            border: 1px solid black;
+            background-color: green;
+            height: 100px;
+            width: 100px;
+        }
+
+        .blue {
+            border: 1px solid black;
+            background-color: blue;
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <input type="button" value="이미지 생성" id="button">
+        <input type="button" value="표 생성" id="button2">
+        <input type="button" value="표 삭제" id="button3">
+    </div>
+
+    <div id="wrap2">
+        <div class="box red">red</div>
+        <div class="box green">green</div>
+        <div class="box blue">blue</div>
+        <input type="button" value="red box 클래스 토글" id="boxbutton1">
+        <input type="button" value="green box 삭제" id="boxbutton2">
+
+    </div>
+
+    <script>
+        const button3 = document.querySelector('#button3');
+        button3.addEventListener('click', () => {
+            table.remove();
+        })
+
+        const box_red = document.querySelectorAll('.box')[0];
+        const box_green = document.querySelectorAll('.box')[1];
+        const box_blue = document.querySelectorAll('.box')[2];
+
+        const boxbutton1 = document.querySelector('#boxbutton1');
+        const boxbutton2 = document.querySelector('#boxbutton2');
+        const boxbutton3 = document.createElement('button');
+    
+        console.log(box_blue.classList.contains('box'));
+
+        boxbutton1.addEventListener('click', () => {
+            box_red.classList.toggle('red');
+        })
+
+        boxbutton2.addEventListener('click', () => {
+            box_green.remove();
+        })
+
+        boxbutton3.setAttribute('onclick', 'f()');
+        function f() {
+            box_blue.classList.remove('blue');
+        }
+        boxbutton3.textContent = 'blue 삭제 버튼';
+        wrap2.appendChild(boxbutton3);
+
+
+
+        const wrap = document.querySelector('#wrap');
+        const div = document.createElement('div'); // 요소 만들기
+        const txt = document.createTextNode('item1'); // 요소 내부에 들어갈 txt 만들기
+        
+        
+        // 속성 추가하기 1번 방법
+        // const attr = document.createAttribute('class'); // 속성 만들기
+        // attr.value = 'item';
+        // div.setAttributeNode(attr); // 만든 속성을 div에 넣어줌
+
+        // 속성 추가하기 2번 방법
+        div.setAttribute('class', 'item');
+        // div.setAttribute('class', 'red'); 이렇게 중복으로 넣으면 기존 class가 지워짐
+        
+        // 속성 추가하기 3번 방법 (클래스일 경우)
+        div.classList.add('red'); 
+
+        div.appendChild(txt); // txt가 div의 자식으로 들어감
+        wrap.appendChild(div); // div가 wrap의 자식으로 들어감
+
+        const button = document.querySelector('#button');
+        button.addEventListener("click", () => {
+            // 이미지 추가하기
+            const image = document.createElement('img');
+            image.setAttribute('src', '../js/images/question.jpg');
+            wrap.appendChild(image);
+            image.classList.add('size');
+        })
+
+        // 테이블 만들기
+        const button2 = document.querySelector('#button2');
+
+        button2.addEventListener('click', () => {
+        const table = document.createElement('table');
+        const thead = document.createElement('thead');
+        const tbody = document.createElement('tbody');
+
+        wrap.appendChild(table);
+        table.appendChild(thead);
+        table.appendChild(tbody);
+
+        // 제목
+        const tr2 = document.createElement('tr');
+        const th = document.createElement('th');
+        const th2 = document.createElement('th');
+        const text3 = document.createTextNode('제목');
+        const text4 = document.createTextNode('제목');
+        thead.appendChild(tr2);
+        tr2.appendChild(th);
+        tr2.appendChild(th2);
+        th.appendChild(text3);
+        th2.appendChild(text4);
+
+        tr2.classList.add('borderColor');
+        th.classList.add('borderColor');
+        th2.classList.add('borderColor');
+
+        // 내용
+        for(i = 0; i < 2; i++) {
+            const tr = document.createElement('tr');
+            const td = document.createElement('td');
+            const td2 = document.createElement('td');
+            const text1 = document.createTextNode('내용');
+            const text2 = document.createTextNode('내용');
+            tbody.appendChild(tr);
+            tr.appendChild(td);
+            tr.appendChild(td2);
+            td.appendChild(text1);
+            td2.appendChild(text2);
+
+            tr.classList.add('borderColor');
+            td.classList.add('borderColor');
+            td2.classList.add('borderColor');
+        }
+    
+        table.classList.add('borderColor');
+        })
+    
+    </script>
+</body>
+</html>
