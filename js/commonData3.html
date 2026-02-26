@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .images {
+            height : 300px;
+            width: 300px;
+        }
+
+    </style>
+</head>
+
+<body id="body">
+    <h1>문화재 목록</h1>
+    <h2>Page 2</h2>
+    <button id="one">1</button>
+    <button id="two">2</button>
+    <button id="three">3</button>
+    <div id="div">
+        <table>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+    </div>
+    <script>
+        const body = document.querySelector("#body");
+        const div = document.querySelector("#div");
+        const parent = document.querySelector("#parent");
+        const btn = document.querySelector("#btn");
+        const tbody = document.querySelector("#tbody");
+
+        const one = document.querySelector("#one");
+        const two = document.querySelector("#two");
+        const three = document.querySelector("#three");
+
+        one.addEventListener("click", () => {
+            location.href = "commonData2.html";
+        })
+
+        two.addEventListener("click", () => {
+            location.href = "commonData3.html";
+        })
+
+        three.addEventListener("click", () => {
+            location.href = "commonData4.html";
+        })
+
+        var xhr = new XMLHttpRequest();
+        var url = 'http://apis.data.go.kr/6480000/gyeongnamcultural/gyeongnamculturallist'; /*URL*/
+        var queryParams = '?' + encodeURIComponent('serviceKey') + '='+'ae3f9a88c1f50ff766075283681821c4d7daee670515d650ec74b597d8b211fc'; /*Service Key*/
+        queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('2'); /**/
+        queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('5'); /**/
+        queryParams += '&' + encodeURIComponent('resultType') + '=' + encodeURIComponent('json'); /**/
+        xhr.open('GET', url + queryParams);
+        
+        xhr.onload = () => {
+            const result = JSON.parse(xhr.responseText);
+            console.log(result);
+            console.log(result.gyeongnamculturallist.body.items.item[1].fileurl1);
+            
+            
+            
+
+            for(i = 0; i < result.gyeongnamculturallist.body.items.item.length; i++) {
+                const tr = document.createElement("tr");
+                const tr2 = document.createElement("tr");
+                const td = document.createElement("td");
+                const td2 = document.createElement("td");
+                let newImg = document.createElement("img");
+
+                newImg.setAttribute("src", result.gyeongnamculturallist.body.items.item[i].fileurl1);
+                newImg.setAttribute("class", "images");
+                newImg.setAttribute("id", result.gyeongnamculturallist.body.items.item[i].MYONGCHING);
+
+                td.appendChild(newImg);
+                td2.textContent = result.gyeongnamculturallist.body.items.item[i].MYONGCHING;
+                tr.appendChild(td);
+                tr2.appendChild(td2);
+                tbody.appendChild(tr);
+                tbody.appendChild(tr2);
+
+                newImg.addEventListener("click", (e) => {
+                    
+                    div.innerHTML = "";
+                    const neww = document.createElement("div");
+                    const bttn = document.createElement("input");
+                    bttn.setAttribute("type", "button");
+                    bttn.setAttribute("value", "뒤로 가기");
+                    neww.appendChild(bttn);
+                    div.appendChild(neww);
+                    
+                    // div에 상세 정보 추가하면 될듯 테이블로 할까?
+                    let newImg = document.createElement("img");
+
+                    for(i = 0; i < result.gyeongnamculturallist.body.items.item.length; i++) {
+                        if(result.gyeongnamculturallist.body.items.item[i].MYONGCHING == e.target.id) {
+
+                            if(result.gyeongnamculturallist.body.items.item[i].fileurl1 != "") {
+                                let newImg = document.createElement("img");
+                                newImg.setAttribute("src", result.gyeongnamculturallist.body.items.item[i].fileurl1);
+                                newImg.setAttribute("class", "images");
+                                div.appendChild(newImg);
+                            }
+
+                            if(result.gyeongnamculturallist.body.items.item[i].fileurl2 != "") {
+                                let newImg = document.createElement("img");
+                                newImg.setAttribute("src", result.gyeongnamculturallist.body.items.item[i].fileurl2);
+                                newImg.setAttribute("class", "images");
+                                div.appendChild(newImg);
+                            }
+
+                            if(result.gyeongnamculturallist.body.items.item[i].fileurl3 != "") {
+                                let newImg = document.createElement("img");
+                                newImg.setAttribute("src", result.gyeongnamculturallist.body.items.item[i].fileurl3);
+                                newImg.setAttribute("class", "images");
+                                div.appendChild(newImg);
+                            }
+
+                            const DOJIJUNG_NO = document.createElement("div");
+                            DOJIJUNG_NO.textContent = "도지정 넘버 : " + result.gyeongnamculturallist.body.items.item[i].DOJIJUNG_NO;
+                            const JIJUNG_DATE = document.createElement("div");
+                            JIJUNG_DATE.textContent = "지정일자 :" + result.gyeongnamculturallist.body.items.item[i].JIJUNG_DATE;
+                            const MYONGCHING = document.createElement("div");
+                            MYONGCHING.textContent = "명칭 :" + result.gyeongnamculturallist.body.items.item[i].MYONGCHING;
+                            const MYONGCHING_HANMUN = document.createElement("div");
+                            MYONGCHING_HANMUN.textContent = "한자 이름 :" + result.gyeongnamculturallist.body.items.item[i].MYONGCHING_HANMUN;
+                            const CONTENT = document.createElement("div");
+                            CONTENT.textContent = "설명 :" + result.gyeongnamculturallist.body.items.item[i].CONTENT;
+                            const SIDAE = document.createElement("div");
+                            SIDAE.textContent = "시대 :" + result.gyeongnamculturallist.body.items.item[i].SIDAE;
+                            const UTMK_X = document.createElement("div");
+                            UTMK_X.textContent = "x :" + result.gyeongnamculturallist.body.items.item[i].UTMK_X;
+                            const UTMK_Y = document.createElement("div");
+                            UTMK_Y.textContent = "y :" + result.gyeongnamculturallist.body.items.item[i].UTMK_Y;
+
+
+
+                            div.append(DOJIJUNG_NO);
+                            div.append(JIJUNG_DATE);
+                            div.append(MYONGCHING);
+                            div.append(MYONGCHING_HANMUN);
+                            div.append(CONTENT);
+                            div.append(SIDAE);
+                            div.append(UTMK_X);
+                            div.append(UTMK_Y);
+                        }
+                    }
+
+                    
+
+                    bttn.addEventListener("click", () => {
+                        location.reload();
+                    })
+                })
+            } 
+        }
+
+        xhr.send('');
+
+
+    </script>
+</body>
+</html>

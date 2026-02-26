@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>테이블을 불러오겠습니다.</h1>
+    <button id="btn">테이블 만들기</button>
+    <div id="div"></div>
+    <div id="div2"></div>
+    <script>
+        const btn = document.querySelector("#btn");
+        const div = document.querySelector("#div");
+        const div2 = document.querySelector("#div2");
+
+        btn.addEventListener("click", () => {
+            if(div.innerHTML == "") {
+                f();
+            } else {
+                div.innerHTML = "";
+            }
+            
+        });
+
+        function f() {
+            const xhr = new XMLHttpRequest();
+            const hh = ["id", "name", "username", "email", "address", "phone", "website", "company"];
+            
+            xhr.onload = () => {
+                const result = JSON.parse(xhr.responseText);
+                const table = document.createElement("table");
+                const thead = document.createElement("thead");
+                const tbody = document.createElement("tbody");
+                
+                div.appendChild(table);
+                table.appendChild(thead);
+                table.appendChild(tbody);
+
+                for(i = 0; i < result.length; i++) {
+                    const th = document.createElement("th");
+                    th.textContent = hh[i];
+                    thead.appendChild(th);
+                }
+                
+                for(i = 0; i < result.length; i++) {
+                    const tr = document.createElement("tr");
+                    const td1 = document.createElement("td");
+                    const td2 = document.createElement("td");
+                    const td3 = document.createElement("td");
+                    const td4 = document.createElement("td");
+                    const td5 = document.createElement("td");
+                    const td6 = document.createElement("td");
+                    const td7 = document.createElement("td");
+                    const td8 = document.createElement("td");
+                    td1.textContent = result[i].id;
+                    td2.textContent = result[i].name;
+                    td3.textContent = result[i].username;
+                    td4.textContent = result[i].email;
+                    td5.textContent = "클릭해서 자세히 보기";
+                    td6.textContent = result[i].phone;
+                    td7.textContent = result[i].website;
+                    td8.textContent = "클릭해서 자세히 보기";                      
+                    tr.appendChild(td1);
+                    tr.appendChild(td2);
+                    tr.appendChild(td3);
+                    tr.appendChild(td4);
+                    tr.appendChild(td5);
+                    tr.appendChild(td6);
+                    tr.appendChild(td7);
+                    tr.appendChild(td8);
+                    tbody.appendChild(tr);
+                    const info = result[i].address.street + " " +result[i].address.suite+ " " +result[i].address.city+ " " +result[i].address.zipcode+ " " +result[i].address.geo.lat+ " " +result[i].address.geo.lng;
+                    const info2 = result[i].company.name + " " + result[i].company.catchPhrase + " " + result[i].company.bs;
+                    td5.addEventListener("click", () => {
+                        div2.innerHTML = "주소 : " + info;
+                    })
+
+                    td8.addEventListener("click", () => {
+                        div2.innerHTML = "회사 : " + info2;
+                    })
+                }
+
+            }
+            xhr.open("get", "https://jsonplaceholder.typicode.com/users");
+            xhr.send();
+            
+        }
+    </script>
+</body>
+</html>
